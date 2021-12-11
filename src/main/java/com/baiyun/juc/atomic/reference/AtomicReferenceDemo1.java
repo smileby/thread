@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
  * @author: BaiYun
  * @Date： 2021/12/8 14:01
  * @Description：
+ *      这个demo演示 对象在修改时的线程不安全性,并且使用两种方式解决了这个不安全的问题
+ *      1、使用Synchronized关键字进行同步； 2、使用AtomicReference的CAS机制来保证对象修改的安全性
  */
 public class AtomicReferenceDemo1 {
 
@@ -16,7 +18,8 @@ public class AtomicReferenceDemo1 {
 
         for(int i = 0;i < 10;i++){
             new Thread(() -> {
-                synchronized (AtomicReferenceDemo1.class) {
+                // 此处不使用synchronized进行同步，即使BankCard使用了volatile关键字，也不能保证线程的安全。
+//                synchronized (AtomicReferenceDemo1.class) {
                     // 先读取全局的引用
                     final BankCard card = bankCard;
                     // 构造一个新的账户，存入一定数量的钱
@@ -29,7 +32,7 @@ public class AtomicReferenceDemo1 {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                }
+//                }
             }).start();
         }
     }

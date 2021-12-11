@@ -58,7 +58,7 @@ public class AtomicReferenceDemo {
             };
             getAndUpdate 方法只能进行整个对象的替换，修改某个属性的话，会导致对象值的直接更新。返回与预期不一致
          */
-        // 算也不算是个bug
+
         UnaryOperator<Student> uo = o -> {return new Student("王五", 25);};
         System.out.println(atomicReference.getAndUpdate(uo)); // 返回更新前的引用
         System.out.println(atomicReference.get());

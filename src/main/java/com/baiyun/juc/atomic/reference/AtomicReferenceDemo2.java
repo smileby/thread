@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * @author: BaiYun
  * @Date： 2021/12/8 14:26
- * @Description：
+ * @Description：  使用AtomicReference的CAS机制来保证对象修改的安全性
  */
 public class AtomicReferenceDemo2 {
 
