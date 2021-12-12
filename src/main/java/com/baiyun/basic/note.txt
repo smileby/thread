@@ -1,0 +1,17 @@
+1、create 如何创建线程
+2、ticket 卖票demo
+
+
+
+
+线程的生命周期
+
+NEW  -> Runnable -> Running -> block/runnable -> runnable  terminated
+
+runnable: 可执行状态，具备执行的能力，但不一定会执行
+running ：执行状态，分配到了CPU执行权（CPU进行调度），在running过程中有可能会block住（sleep/wait/lock），在running的过程中，有可能
+        回到runnable状态，在running的过程中CPU把执行权交给了其它线程（yield）
+block: 执行sleep、lock、wait导致block，这个状态不能直接回到running状态，
+terminated： 结束状态，在running的过程中，或者running正常执行完成，会进入结束状态
+            或者在sleep/block/lock的过程中被打断，线程也有可能进行Terminated状态，
+             在runnable的过程中一些意外情况发生，导致线程结束
