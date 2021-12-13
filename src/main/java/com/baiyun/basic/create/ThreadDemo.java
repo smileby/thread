@@ -5,8 +5,9 @@ package com.baiyun.basic.create;
  * @date 2021-12-11-21:08
  *
  * 使用Thread的方式创建一个线程, 只有start之后，才会是一个线程，否则直接调用run方法，只是执行了该方法.
+ * start方法是立即返回的，且一个线程只能调用start一次，如果再次调用会抛出异常。
  *
- * start方法是立即返回的，且一个线程只能调用start一次，如果再次调用会抛出异常
+ *
  */
 public class ThreadDemo {
 

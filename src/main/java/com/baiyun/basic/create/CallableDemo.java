@@ -6,6 +6,8 @@ import java.util.concurrent.FutureTask;
 /**
  * @author baiyun
  * @date 2021-12-11-21:16
+ *
+ * Callable在完成时能够返回一个值
  */
 public class CallableDemo {
 

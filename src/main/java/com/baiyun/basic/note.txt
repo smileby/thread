@@ -15,3 +15,7 @@ block: 执行sleep、lock、wait导致block，这个状态不能直接回到runn
 terminated： 结束状态，在running的过程中，或者running正常执行完成，会进入结束状态
             或者在sleep/block/lock的过程中被打断，线程也有可能进行Terminated状态，
              在runnable的过程中一些意外情况发生，导致线程结束
+
+
+java内存模型参考资料：
+    https://segmentfault.com/a/1190000015555973
